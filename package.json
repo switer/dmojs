@@ -1,0 +1,47 @@
+{
+  "name": "dmojs",
+  "version": "0.0.1",
+  "description": "DMO is a shortname of Data Manipulation Object, a lightweight module for manipulate object and emit message.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run mocha",
+    "mocha": "mocha test/index.js",
+    "mocha-dist": "mocha test/index.dist.js",
+    "dist": "browserify --standalone Mux ./index.js > dist/dmojs.js && uglifyjs -c hoist_vars=true dist/dmojs.js > dist/dmojs.min.js",
+    "cover-html": "mocha --require blanket --reporter html-cov ./test/index.js > coverage.html",
+    "release": "git push && git push --tag && npm publish",
+    "prepublish": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/switer/dmojs.git"
+  },
+  "keywords": [
+    "state",
+    "model"
+  ],
+  "author": "switer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/switer/dmojs/issues"
+  },
+  "homepage": "https://github.com/switer/dmojs",
+  "devDependencies": {
+    "blanket": "^1.1.6",
+    "coveralls": "^2.11.2",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.3",
+    "gulp-header": "^1.2.2",
+    "gulp-uglify": "^1.1.0",
+    "gulp-uglifyjs": "^0.5.0",
+    "gulp-webpack": "^1.1.2",
+    "istanbul": "^0.3.5",
+    "mocha": "^2.1.0",
+    "mocha-lcov-reporter": "0.0.1"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "lib"
+    }
+  }
+}
