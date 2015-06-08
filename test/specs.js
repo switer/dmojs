@@ -25,4 +25,16 @@ module.exports = function (DMO, assert) {
 			assert.equal(d.$get('posts[0].head'), 'data')
 		})
 	})
+	describe('#set', function () {
+		it('set data', function () {
+			var d = new DMO({
+				props: {
+					title: 'dmo',
+					posts: [{
+						head: 'data'
+					}]
+				}
+			})
+		})
+	})
 }
