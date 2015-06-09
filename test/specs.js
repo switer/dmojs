@@ -35,6 +35,13 @@ module.exports = function (DMO, assert) {
 					}]
 				}
 			})
+			d.$set('desc', 'dmo.js')
+			d.$set('title', 'dmo-test')
+			d.$set('posts[0].head', 'data2')
+
+			assert.equal(d.$data.desc, 'dmo.js')
+			assert.equal(d.$data.title, 'dmo-test')
+			assert.equal(d.$data.posts[0].head, 'data2')
 		})
 	})
 }
