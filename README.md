@@ -32,6 +32,6 @@ d.$get('title') // --> 'dmo.js miao~'
 
 Set data:
 ```js
-d.$set('desc', demo.js demo)
-d.$data.desc = demo.js demo // --> 'demo.js demo'
+d.$set('desc', 'demo.js demo')
+console.log(d.$data.desc) // --> 'demo.js demo'
 ```
